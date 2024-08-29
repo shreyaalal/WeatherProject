@@ -9,14 +9,15 @@ pipeline {
         }
         stage('secondjob') {
             steps {
-                sh '''
+                bat '''
                 git clone https://github.com/shreyaalal/WeatherProject.git
+                cd WeatherProject
                 '''
             }
         }
         stage('thirdjob') {
             steps {
-                sh '''touch sample1.txt
+                bat '''type nul > sample1.txt
                 git add .
                 git commit -m "first commit!"
                 git push

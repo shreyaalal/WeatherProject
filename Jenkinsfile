@@ -19,11 +19,12 @@ pipeline {
             steps {
                 bat '''type nul > sample1.txt
                 git add .
+                git checkout -b new-branch
                 git config --global user.email "shreyalal2025@gmail.com"
                 git config --global user.name "Shreya Lal"
 
                 git commit -m "first commit!"
-                git push
+                git push -u origin new-branch
                 '''
             }
         }
